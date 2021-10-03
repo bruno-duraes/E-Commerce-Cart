@@ -1,5 +1,5 @@
 import api from "../http"
 
 export const getAllProducts = () => {
-    return api.get('/products')
+    return api.get('./products')
 }

@@ -15,3 +15,7 @@
     width: 160px;
     margin-left: 30px;
 }
+
+.checkbox{
+    cursor: pointer;
+}

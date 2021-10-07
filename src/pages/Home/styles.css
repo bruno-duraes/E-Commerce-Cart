@@ -5,3 +5,18 @@
     width: 100vw;
     flex-wrap: wrap;
 }
+.btn{
+    height: 30px;
+    width: 50px;
+    background-color: tomato;
+    border: none ;
+    color: white;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: #DDD;
+    cursor: pointer;
+    color: #474747;
+    border: #474747 solid 2px
+    
+}

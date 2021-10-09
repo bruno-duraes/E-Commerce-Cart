@@ -2,6 +2,8 @@ import { List } from "rc-field-form"
 import { useEffect, useState } from "react"
 import { ProductCard } from "../../components/ProductCard"
 import { getAllProducts } from "../../services/products"
+import { useCartContext } from "../../contexts/cartContext"
+
 
 import './styles.css'
 
@@ -14,16 +16,20 @@ const HomePage = () => {
     const handleCheckedList = (product,e) => {
         if(e.target.checked){
             setList([...selectedList, product])
-            console.log([...selectedList, product])
         } else {
             const newList = selectedList.filter(({id})=> product.id !== id)
             setList(newList)
-            console.log(newList)
         }
     }
 
-    const getSelectedList = () => {
-        console.log(selectedList)
+    const {cartProducts,addProduct} = useCartContext()
+     
+
+
+
+    const addOnCart = () => {   
+        addProduct(selectedList)
+
     }
     
     useEffect(async () => {
@@ -36,7 +42,6 @@ const HomePage = () => {
     if (isLoading) {
         return <p>loading...</p>
     }
-
     
     return <div className="HomePageContent" >
         {products?.map((product) => {
@@ -46,9 +51,8 @@ const HomePage = () => {
         type='button'
         value='Send'
         className='btn'
-        onClick={getSelectedList}/>
+        onClick={addOnCart}/>
     </div >
-
 }
 
 export { HomePage }

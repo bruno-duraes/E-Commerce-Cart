@@ -1,5 +1,5 @@
 import { Card, Typography } from 'antd'
-import React, { useState } from 'react'
+import React from 'react'
 import './styles.css'
 
 const ProductCard = ({ product, handleChange }) => {

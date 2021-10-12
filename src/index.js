@@ -5,10 +5,12 @@ import { CartProvider } from './contexts/cartContext'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
+
   <React.StrictMode>
     <CartProvider initialState={[]}>
     <App />
     </CartProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root') 
 )
 reportWebVitals()

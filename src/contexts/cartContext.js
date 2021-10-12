@@ -2,7 +2,6 @@ import React, { createContext, useCallback, useContext, useReducer } from 'react
 
 const cartContext = createContext()
 
-
 const cartReducer = (state, { type, payload }) => {
     switch (type) {
         case 'ADD_PRODUCTS':
